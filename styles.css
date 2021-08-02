@@ -32,9 +32,7 @@ img {
 }
 
 .card-background {
-    background: linear-gradient(
-        90deg, rgba(238, 174, 202, 0.65) 0%,
-        rgba(148, 188, 233, 0.5) 100%);
+    background: linear-gradient(15deg, #13547a 0%, #80d0c7bb 100%);
     position: relative;
 }
 
@@ -137,4 +135,18 @@ img {
         font-size: 12px;
     }
 
+}
+
+.jobs.card-background {
+    background: linear-gradient(76deg, rgba(118, 244, 246, 0.651) 0%, rgba(255, 255, 134, 0.76) 100%); 
+}
+
+.ask.card-background {
+    background: linear-gradient(90deg, #fff2c5 0%, #ffb690 100%);
+}
+
+.show.card-background {
+    background: linear-gradient(
+        90deg, rgba(238, 174, 202, 0.65) 0%,
+        rgba(148, 188, 233, 0.5) 100%);
 }

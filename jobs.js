@@ -55,7 +55,7 @@ fetch('https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty')
                 slideOnedescription.innerText = 'BY: ' + data.by + '  SCORE: ' + data.score + '  COMMENTS: ' + data.descendants;
 
             });
-        
+
         //fetch 3 stories for banners, banner 2
         itemNum = slideDatalooped[1] + '.json?print=pretty';
 
@@ -102,7 +102,7 @@ fetch('https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty')
 const cardSection = document.querySelector('.card-section');
 
 //start fetch
-fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
+fetch('https://hacker-news.firebaseio.com/v0/jobstories.json?print=pretty')
 
     // Run the following after receiving a response from the API
     .then(function (rawData) {
@@ -113,7 +113,7 @@ fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
     //loop for first 100 ids
     .then(function (data) {
 
-        for (i = 0; i <= 99; i++) {
+        for (i = 0; i <= 50; i++) {
 
             let dataLooped = [];
             let index = 0;
@@ -150,14 +150,9 @@ fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
                     const cardButton = document.createElement('a');
                     cardButton.classList.add("href='#'", 'btn', 'btn-outline-danger');
 
-                    const footer = document.createElement('div');
-                    footer.classList.add('card-footer');
-
-
                     cardSection.appendChild(card);
                     card.appendChild(header);
                     card.appendChild(cardBody);
-                    card.appendChild(footer);
 
                     cardBody.appendChild(cardTitle);
                     cardBody.appendChild(cardText);
@@ -168,7 +163,6 @@ fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
                     cardText.innerText = 'BY: ' + data.by;
                     cardButton.innerText = 'Read More';
                     cardButton.href = data.url;
-                    footer.innerText = 'Score: ' + data.score + '     Comments: ' + data.descendants;
 
                 })
 
