@@ -30,7 +30,7 @@ fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
 
             //Push ids into array
             slideDatalooped.push(data[i]);
-        
+
         }
 
         //fetch 3 stories for banners
@@ -40,19 +40,19 @@ fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
 
         fetch(fetchUrl.concat(itemNum))
 
-        .then(function (rawData) {
+            .then(function (rawData) {
 
-            return rawData.json();
+                return rawData.json();
 
-        })
+            })
 
-        .then(function (data) {
+            .then(function (data) {
 
-            slideOnetitle.innerText = data.title;
-            linkOne.href = data.url
-            slideOnedescription.innerText = 'BY: ' + data.by + '  SCORE: ' + data.score + '  COMMENTS: ' + data.descendants;
+                slideOnetitle.innerText = data.title;
+                linkOne.href = data.url
+                slideOnedescription.innerText = 'BY: ' + data.by + '  SCORE: ' + data.score + '  COMMENTS: ' + data.descendants;
 
-        });
+            });
 
         itemNum = slideDatalooped[1] + '.json?print=pretty';
 
@@ -89,7 +89,7 @@ fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
                 slideThreedescription.innerText = 'BY: ' + data.by + '  SCORE: ' + data.score + '  COMMENTS: ' + data.descendants;
 
             });
-});
+    });
 
 //the story's score, number of comments, and author's username should be visible
 
@@ -175,5 +175,3 @@ fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
         };
 
     });
-
-
