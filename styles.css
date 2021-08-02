@@ -32,9 +32,7 @@ img {
 }
 
 .card-background {
-    background: linear-gradient(
-        90deg, rgba(238, 174, 202, 0.65) 0%,
-        rgba(148, 188, 233, 0.5) 100%);
+    background: black;
     position: relative;
 }
 
