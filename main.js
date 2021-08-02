@@ -142,11 +142,14 @@ fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
                     const cardTitle = document.createElement('h5');
                     cardTitle.classList.add('card-title');
 
+                    const iFrame = document.createElement('iframe');
+                    iFrame.classList.add('article-preview');
+
                     const cardText = document.createElement('p');
                     cardText.classList.add('card-text');
 
                     const cardButton = document.createElement('a');
-                    cardButton.classList.add("href='#'", 'btn', 'btn-outline-danger');
+                    cardButton.classList.add('btn', 'btn-outline-danger');
 
                     const footer = document.createElement('div');
                     footer.classList.add('card-footer');
@@ -159,14 +162,19 @@ fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
 
                     cardBody.appendChild(cardTitle);
                     cardBody.appendChild(cardText);
+                    cardBody.appendChild(iFrame);
                     cardBody.appendChild(cardButton);
+
+                    iFrame.style.height = '600px';
+                    iFrame.style.marginBottom = '50px'
+                    iFrame.setAttribute("src", data.url, " loading = 'lazy'");
 
                     header.innerText = data.type
                     cardTitle.innerText = data.title;
                     cardText.innerText = 'BY: ' + data.by;
-                    cardButton.innerText = 'Read More'
-                    cardButton.href = data.url
-                    footer.innerText = 'Score: ' + data.score + '     Comments: ' + data.descendants
+                    cardButton.innerText = 'Read More';
+                    cardButton.href = data.url;
+                    footer.innerText = 'Score: ' + data.score + '     Comments: ' + data.descendants;
 
                 })
 
