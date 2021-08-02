@@ -1,5 +1,3 @@
-slideDatalooped =[];
-
 // Slide One
 const slideOnetitle = document.querySelector('#slide-one-title');
 const slideOnedescription = document.querySelector('#slide-one-description');
@@ -15,6 +13,7 @@ const slideThreetitle = document.querySelector('#slide-three-title');
 const slideThreedescription = document.querySelector('#slide-three-description');
 const linkThree = document.querySelector('#url-three');
 
+let = slideDatalooped = [];
 // API request for IDs for banners
 fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
 
@@ -110,76 +109,71 @@ fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
     //loop for first 100 ids
     .then(function (data) {
 
-for (i = 0; i <= 99; i++) {
+        for (i = 0; i <= 99; i++) {
 
-    let dataLooped = [];
-    let index = 0;
+            let dataLooped = [];
+            let index = 0;
 
-    dataLooped.push(data[i]);
+            dataLooped.push(data[i]);
 
-    let itemNum = dataLooped[index] + '.json?print=pretty';
+            let itemNum = dataLooped[index] + '.json?print=pretty';
 
-    const fetchUrl = 'https://hacker-news.firebaseio.com/v0/item/';
+            const fetchUrl = 'https://hacker-news.firebaseio.com/v0/item/';
 
-    fetch(fetchUrl.concat(itemNum))
+            fetch(fetchUrl.concat(itemNum))
 
-        .then(function (rawData) {
+                .then(function (rawData) {
 
-            return rawData.json();
+                    return rawData.json();
 
-        })
+                })
 
-        .then(function (data) {
+                .then(function (data) {
 
-            const card = document.createElement('div');
-            card.classList.add('card','text-center', 'mb-3');
+                    const card = document.createElement('div');
+                    card.classList.add('card', 'text-center', 'mb-3');
 
-            const header =document.createElement('div');
-            header.classList.add('card-header');
+                    const header = document.createElement('div');
+                    header.classList.add('card-header');
 
-            const cardBody = document.createElement('div');
-            cardBody.classList.add('card-body');
+                    const cardBody = document.createElement('div');
+                    cardBody.classList.add('card-body');
 
-            const cardTitle = document.createElement('h5');
-            cardTitle.classList.add('card-title');
+                    const cardTitle = document.createElement('h5');
+                    cardTitle.classList.add('card-title');
 
-            const cardText = document.createElement('p');
-            cardText.classList.add('card-text');
+                    const cardText = document.createElement('p');
+                    cardText.classList.add('card-text');
 
-            const cardButton = document.createElement('a');
-            cardButton.classList.add('btn', 'btn-outline-danger');
+                    const cardButton = document.createElement('a');
+                    cardButton.classList.add("href='#'", 'btn', 'btn-outline-danger');
 
-            const footer = document.createElement('div');
-            footer.classList.add('card-footer');
-
-
-            cardSection.appendChild(card);
-            card.appendChild(header);
-            card.appendChild(cardBody);
-            card.appendChild(footer);
-
-            cardBody.appendChild(cardTitle);
-            cardBody.appendChild(cardText);
-            cardBody.appendChild(cardButton);
-
-            header.innerText = data.type
-            cardTitle.innerText = data.title;
-            cardText.innerText = 'BY: ' + data.by; 
-            cardButton.innerText = 'Read More'
-            cardButton.href = data.url
-            footer.innerText = 'Score: ' + data.score + '     Comments: ' + data.descendants
-
-            })
-
-    index += 1;
-
-    };
-
-});
+                    const footer = document.createElement('div');
+                    footer.classList.add('card-footer');
 
 
+                    cardSection.appendChild(card);
+                    card.appendChild(header);
+                    card.appendChild(cardBody);
+                    card.appendChild(footer);
+
+                    cardBody.appendChild(cardTitle);
+                    cardBody.appendChild(cardText);
+                    cardBody.appendChild(cardButton);
+
+                    header.innerText = data.type
+                    cardTitle.innerText = data.title;
+                    cardText.innerText = 'BY: ' + data.by;
+                    cardButton.innerText = 'Read More'
+                    cardButton.href = data.url
+                    footer.innerText = 'Score: ' + data.score + '     Comments: ' + data.descendants
+
+                })
+
+            index += 1;
+
+        };
+
+    });
 
 
-
-
-// cardSection.appendChild(document.createElement('div')).classList.add('card', 'w-75')

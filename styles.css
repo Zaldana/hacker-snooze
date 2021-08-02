@@ -25,15 +25,19 @@ img {
 }
 
 .nav {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border: rgb(201, 201, 201) 1.1px solid;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.301);
 }
 
 .card-background {
-    background: linear-gradient(90deg, rgba(238, 174, 202, 0.856) 0%, rgba(148, 188, 233, 0.5) 100%); 
+    background: linear-gradient(
+        90deg, rgba(238, 174, 202, 0.65) 0%,
+        rgba(148, 188, 233, 0.5) 100%);
+    position: relative;
 }
+
 .card-section {
     display: flex;
     flex-wrap: wrap;
@@ -50,7 +54,7 @@ img {
 }
 
 .card:hover {
-    box-shadow: 0px 0px 8px rgba(169, 6, 202, 0.123);
+    box-shadow: 0px 0px 8px rgba(169, 6, 202, 0.39);
 }
 
 .card-header {
@@ -62,14 +66,25 @@ img {
 
 .card-body {
     background: linear-gradient(
-        18deg, rgba(255, 255, 255, 0.2) 0%,
+        18deg, rgba(255, 255, 255, 0.349) 0%,
         rgba(255, 255, 255, 0.75) 100%);
-    backdrop-filter: 10rem;
+        backdrop-filter: blur(3px);
 }
+
 
 .card-footer {
     color: rgb(189, 189, 189);
     background-color: rgb(255, 255, 255);
+}
+
+.type {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 750px;
+    position: absolute;
+    z-index: -3;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    line-height: 700px;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -85,6 +100,20 @@ img {
         height: 250px;
     }
 
+}
+
+@media only screen and (max-width: 839px) {
+.card-section {
+    padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 651px) {
+.card-section {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    }
 }
 
 @media only screen and (max-width: 465px) {
@@ -109,3 +138,4 @@ img {
     }
 
 }
+
