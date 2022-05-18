@@ -25,20 +25,21 @@ fetch('https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty')
     .then(function (rawData) {
 
         return rawData.json();
+    
     })
 
     //loop for first 3 ids
     .then(function (data) {
 
-        for (i = 0; i <= 2; i++) {
+        for (let i = 0; i <= 2; i++) {
 
             //Push ids into array
-            slideDatalooped.push(data[i]);
+            slideDatalooped.push(data[ i ]);
 
         }
 
         //fetch 3 stories for banners, banner 1
-        let itemNum = slideDatalooped[0] + '.json?print=pretty';
+        let itemNum = slideDatalooped[ 0 ] + '.json?print=pretty';
 
         fetch(`https://hacker-news.firebaseio.com/v0/item/${itemNum}`)
 
@@ -55,9 +56,9 @@ fetch('https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty')
                 slideOnedescription.innerText = 'BY: ' + data.by + '  SCORE: ' + data.score + '  COMMENTS: ' + data.descendants;
 
             });
-        
+
         //fetch 3 stories for banners, banner 2
-        itemNum = slideDatalooped[1] + '.json?print=pretty';
+        itemNum = slideDatalooped[ 1 ] + '.json?print=pretty';
 
         fetch(`https://hacker-news.firebaseio.com/v0/item/${itemNum}`)
 
@@ -76,7 +77,7 @@ fetch('https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty')
             });
 
         //fetch 3 stories for banners, banner 3
-        itemNum = slideDatalooped[2] + '.json?print=pretty';
+        itemNum = slideDatalooped[ 2 ] + '.json?print=pretty';
 
         fetch(`https://hacker-news.firebaseio.com/v0/item/${itemNum}`)
 
@@ -118,9 +119,9 @@ fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
             let dataLooped = [];
             let index = 0;
 
-            dataLooped.push(data[i]);
+            dataLooped.push(data[ i ]);
 
-            let itemNum = dataLooped[index] + '.json?print=pretty';
+            let itemNum = dataLooped[ index ] + '.json?print=pretty';
 
             fetch(`https://hacker-news.firebaseio.com/v0/item/${itemNum}`)
 
